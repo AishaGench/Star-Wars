@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+.container{
+  color: rgb(243, 239, 239);
+
+}
+
+body {
+  background-image: url('./images/background.png');
+  font-family: system-ui;
+  color: rgb(243, 239, 239);
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  display: block;
+  max-width: 60rem;
+  margin: 2rem;
+}
