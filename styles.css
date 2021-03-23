@@ -30,3 +30,8 @@ img {
   max-width: 60rem;
   margin: 2rem;
 }
+
+button{
+	color: midnightblue;
+	border: 5px solid orange;
+}

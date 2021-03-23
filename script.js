@@ -49,10 +49,40 @@ starWarsCount('planets').then(response =>{
         starWarsCount('films').then(response =>{
             console.log(response)
 })
+
+Promise.all([
+	starWarsCount('films'),
+	starWarsCount('planets'),
+	starWarsCount('species'),
+    starWarsCount('people'),
+    starWarsCount('starships'),
+	starWarsCount('vehicles')
+])
+  .then(([films,planets,species,people,starships,vehicles])=>{
+      output.innerHTML =  
+		  `${films.length} films ,` + 
+		  `${planets.length} planets, ` + 
+		  `${species.length} species ,` +
+		  `${people.length} people,` + 
+		  `${starships.length} starships, ` + 
+		  `${vehicles.length} vehicles, ` 
+  }) .catch((err) =>{
+      console.log(err)
+      
+  
+  })
+ .finally(()=>{spinner.src='images/star-wars-ship-2.png'})
+ btn.addEventListener('click',()=>{
+     starWarsCount('starships').then(response =>{
+        //  console.log(response)
+         
+        const randomNumber= Math.floor(Math.random()* response.length)
+         spinner.src=url + response[randomNumber].image
+     })
        
+ })
 
 
-
-starWars('films');
+//starWars('films');
 
 
