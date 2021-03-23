@@ -25,6 +25,32 @@ function starWars(endpoint){
     })
 }
 
+function starWarsCount(endpoint){
+    return fetch(url + endpoint)
+     .then((response)=>{
+            if(response.ok){
+                return response.json()
+            }
+            else{
+               return Promise.reject(Error("unsuccescful response"));
+            }    
+    
+        })
+    }
+
+starWarsCount('planets').then(response =>{
+            
+            console.log(response)
+        })
+        starWarsCount('starships').then(response =>{
+            
+            console.log(response)
+        })
+        starWarsCount('films').then(response =>{
+            console.log(response)
+})
+       
+
 
 
 starWars('films');
