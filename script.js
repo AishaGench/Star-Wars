@@ -34,7 +34,8 @@ function starWarsCount(endpoint){
             }
             else{
                return Promise.reject(Error("unsuccescful response"));
-            }    
+            } 
+	// return response.ok ? response.json() : Promise.reject(Error("Unsuccessful response"));
     
         })
     }
@@ -67,7 +68,7 @@ Promise.all([
 		  `${people.length} people,` + 
 		  `${starships.length} starships, ` + 
 		  `${vehicles.length} vehicles, ` 
-  }) .catch((err) =>{
+  }).catch((err) =>{
       console.log(err)
       
   
