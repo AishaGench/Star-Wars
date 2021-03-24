@@ -8,11 +8,12 @@ function starWars(endpoint){
     //used Api url
     const url = 'https://starwars.egghead.training/' + endpoint;
     return fetch(url).then((response)=>{
-        if(response.ok){
-            return response.json();
-        }else{
-            return Promise.reject(Error('Unsuccesful response'));
-        }
+		return response.ok ? response.json() : Promise.reject(Error('Unsuccesful response'))
+//        if(response.ok){
+//            return response.json();
+//        }else{
+//            return Promise.reject(Error('Unsuccesful response'));
+//        }
     })
     .then((data)=>{
         console.log(data);
